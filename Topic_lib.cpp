@@ -110,6 +110,30 @@ bool operator<(const Topic &lhs, const Topic &rhs) {
     return lhs.mNumber< rhs.mNumber;
 }
 
+std::set<size_t> Topic::getAnswer(std::string &optionLine) {
+    return std::set<size_t>();
+}
+
+std::ostream &Topic::print(std::ostream &os) const{
+    os << mQuestion << std::endl;
+    for (auto opt: mOption) {
+        os << &opt << "\t";
+    }
+    return os;
+}
+
+std::ostream &Topic::print_Ans(std::ostream &os) const {
+    for (auto ans:mAnswer)
+        os << ans;
+    return os;
+}
+
+std::ostream &operator<<(std::ostream &os, const Topic &rhs) {
+    rhs.print(os);
+    return os;
+}
+
+
 singleTopic::~singleTopic() {
 
 }
