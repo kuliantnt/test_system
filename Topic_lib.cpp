@@ -7,6 +7,7 @@
 #include "Topic_lib.h"
 static const char separator_line = ';'; //分隔符 excel行分隔符
 static const char separator_ans= ' '; //分隔符 excel答案分隔符
+size_t Topic::mTopicNumber = 1; //题目的默认编号是1
 
 /**
  * 构造函数
@@ -114,14 +115,26 @@ std::set<size_t> Topic::getAnswer(std::string &optionLine) {
     return std::set<size_t>();
 }
 
+/**
+ * 打印题目 选项
+ * @param os  ostream
+ * @return
+ */
 std::ostream &Topic::print(std::ostream &os) const{
     os << mQuestion << std::endl;
+    char num = 'A';
     for (auto opt: mOption) {
+        os << num++ << ".";
         os << &opt << "\t";
     }
     return os;
 }
 
+/**
+ * 打印答案
+ * @param os  ostream
+ * @return
+ */
 std::ostream &Topic::print_Ans(std::ostream &os) const {
     for (auto ans:mAnswer)
         os << ans;
@@ -134,13 +147,13 @@ std::ostream &operator<<(std::ostream &os, const Topic &rhs) {
 }
 
 
-singleTopic::~singleTopic() {
+SingleTopic::~SingleTopic() {
 
 }
 
 /*
  * 写多了，压根不需要virtual这个 = =!
-std::set<std::string> singleTopic::getOption(std::string &optionLine) {
+std::set<std::string> SingleTopic::getOption(std::string &optionLine) {
 
 }
 */
@@ -150,7 +163,7 @@ std::set<std::string> singleTopic::getOption(std::string &optionLine) {
  * @param optionLine
  * @return
  */
-std::set<size_t> singleTopic::getAnswer(std::string &optionLine) {
+std::set<size_t> SingleTopic::getAnswer(std::string &optionLine) {
     std::set<size_t > result;
     char temp = optionLine[0];
     if (temp != '\0' && temp >= 65 && temp <= 97) {
@@ -159,7 +172,7 @@ std::set<size_t> singleTopic::getAnswer(std::string &optionLine) {
 }
 
 
-multiTopic::~multiTopic() {
+MultiTopic::~MultiTopic() {
 
 }
 
@@ -169,7 +182,7 @@ multiTopic::~multiTopic() {
  * @param optionLine 获取到的答案
  * @return 答案的set
  */
-std::set<size_t> multiTopic::getAnswer(std::string &optionLine) {
+std::set<size_t> MultiTopic::getAnswer(std::string &optionLine) {
     std::set<size_t > result;
     for (char temp: optionLine) {
         if (temp != '\0' && temp >= 65 && temp <= 97) {
@@ -181,7 +194,7 @@ std::set<size_t> multiTopic::getAnswer(std::string &optionLine) {
     return result;
 }
 
-boolTopic::~boolTopic() {
+BoolTopic::~BoolTopic() {
 
 }
 
@@ -190,7 +203,7 @@ boolTopic::~boolTopic() {
  * @param optionLine 获取到的答案
  * @return 答案的set
  */
-std::set<size_t> boolTopic::getAnswer(std::string &optionLine) {
+std::set<size_t> BoolTopic::getAnswer(std::string &optionLine) {
     std::set<size_t > result;
     char temp = optionLine[0];
     if(temp == 'y' || temp == 'Y')
@@ -202,4 +215,37 @@ std::set<size_t> boolTopic::getAnswer(std::string &optionLine) {
     return result;
 
 }
+
+/**
+ * 添加题目
+ * @param line 从文件中读取的行
+ * @return 成功或者失败的bool
+ */
+bool Topics::addTopic(const std::string &line) {
+    std::stringstream ss(line);
+    std::string topic_opt; //题目类型
+    std::string topic;
+    ss >> topic_opt;
+    if (topic_opt == "选择题")
+        mTopic.push_back(std::make_shared<SingleTopic>(topic));
+    else if (topic_opt == "多选题")
+        mTopic.push_back(std::make_shared<MultiTopic>(topic));
+    else if (topic_opt == "判断题")
+        mTopic.push_back(std::make_shared<BoolTopic>(topic));
+    else
+        return false;
+    return true;
+}
+
+/**
+ * destruct function
+ */
+Topics::~Topics() {
+
+}
+
+std::ostream &Topics::print(std::ostream &) {
+    //todo
+}
+
 
