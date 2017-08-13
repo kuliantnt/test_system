@@ -36,26 +36,27 @@ public:
 
     Topic &operator=(Topic &&rhs);
 
-    std::ostream &print(std::ostream &) const;
+    virtual std::ostream &print(std::ostream &) const;
 
-    std::ostream &print_Ans(std::ostream &) const;
+//    std::ostream &print_Ans(std::ostream &) const;
 
     size_t getNumber() const { return mNumber; }
+
+    std::string getQuestion() const {return mQuestion;}
+
+    std::string getAnswer() const {return mAnswer;}
 
     static size_t mTopicNumber; //题目编号
 
 protected:
     //获取问题选项的一个函数
     std::set<std::string> getOption(std::string &optionLine);
-
-    //纯虚函数
-    virtual std::set<size_t> getAnswer(std::string &optionLine);
-
 private:
     std::string mQuestion;   //问题
     std::set<std::string> mOption;    //选项
-    std::set<size_t> mAnswer;     //答案
+    std::string mAnswer;     //答案
     size_t mNumber; //题目真正的编号。
+    double mScore;//分数
 };
 
 
@@ -63,24 +64,31 @@ private:
  * 单选题
  */
 class SingleTopic : public Topic{
+public:
+    SingleTopic(const std::string&);
     ~SingleTopic();
-    std::set<size_t> getAnswer(std::string& optionLine) override;
+protected:
 };
 
 /**
  * 多选题
  */
 class MultiTopic:public Topic{
-    std::set<size_t> getAnswer(std::string& optionLine) override;
+public:
+    MultiTopic(const std::string&);
     ~MultiTopic();
+protected:
 };
 
 /**
  * 判断题
  */
 class BoolTopic:public Topic{
-    std::set<size_t > getAnswer(std::string& optionLine);
+public:
+    BoolTopic(const std::string&);
+    virtual std::ostream &print(std::ostream &) const override;
     ~BoolTopic();
+protected:
 };
 
 /**
@@ -91,7 +99,7 @@ class Topics {
 public:
     Topics() = delete;
 
-    Topics(const std::string &number, const std::string &name = "", const std::string &ID = ""); //从试卷编号生成试卷。
+    Topics(const std::string &name = "");//从试卷编号生成试卷。
 
     Topics(const Topics &);
 
@@ -101,7 +109,9 @@ public:
 
     Topics &operator==(Topics &&);
 
-    std::ostream& print(std::ostream&);
+    std::ostream &print(std::ostream &);
+
+    std::ostream &print_number(std::ostream &os, size_t num);
 
     ~Topics();
 
@@ -114,8 +124,17 @@ public:
     //修改题目
     bool modifyTopic(const size_t &, const std::string &);
 
+    //获取分数
+    double getScore();
+
+    //计算分数
+    unsigned calculate_score();
+
 private:
     std::string mName;//试卷名称
-    std::string mID; //工号
+    std::string mID = 0; //工号
+    std::string mStudent;// 考生姓名
     std::vector<std::shared_ptr<Topic>> mTopic;
+    std::set<std::string> answer; //考生的答案集合
+    double mScore = 0.0; //分数
 };

@@ -88,6 +88,9 @@
 		<Unit filename="/home/lianlian/Documents/test_system/Topic_lib.h">
 			<Option target="test_system"/>
 		</Unit>
+		<Unit filename="/home/lianlian/Documents/test_system/getTopic.h">
+			<Option target="test_system"/>
+		</Unit>
 		<Unit filename="/home/lianlian/Documents/test_system/main.cpp">
 			<Option target="test_system"/>
 		</Unit>

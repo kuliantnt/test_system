@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lianlian/Documents/test_system/Topic_lib.cpp
+sstream
+-
+memory
+-
+iostream
+-
+Topic_lib.h
+/home/lianlian/Documents/test_system/Topic_lib.h
+
+/home/lianlian/Documents/test_system/Topic_lib.h
+map
+-
+set
+-
+string
+-
+vector
+-
+
+/home/lianlian/Documents/test_system/main.cpp
+cstdio
+-
+
