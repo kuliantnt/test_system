@@ -1,4 +1,0 @@
-/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/test_system.dir
-/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/test_system_autogen.dir
