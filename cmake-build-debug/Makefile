@@ -123,6 +123,19 @@ test_system/fast:
 	$(MAKE) -f CMakeFiles/test_system.dir/build.make CMakeFiles/test_system.dir/build
 .PHONY : test_system/fast
 
+#=============================================================================
+# Target rules for targets named test_system_autogen
+
+# Build rule for target.
+test_system_autogen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_system_autogen
+.PHONY : test_system_autogen
+
+# fast build rule for target.
+test_system_autogen/fast:
+	$(MAKE) -f CMakeFiles/test_system_autogen.dir/build.make CMakeFiles/test_system_autogen.dir/build
+.PHONY : test_system_autogen/fast
+
 Topic_lib.o: Topic_lib.cpp.o
 
 .PHONY : Topic_lib.o
@@ -177,6 +190,60 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/test_system.dir/build.make CMakeFiles/test_system.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+mainwindow.o: mainwindow.cpp.o
+
+.PHONY : mainwindow.o
+
+# target to build an object file
+mainwindow.cpp.o:
+	$(MAKE) -f CMakeFiles/test_system.dir/build.make CMakeFiles/test_system.dir/mainwindow.cpp.o
+.PHONY : mainwindow.cpp.o
+
+mainwindow.i: mainwindow.cpp.i
+
+.PHONY : mainwindow.i
+
+# target to preprocess a source file
+mainwindow.cpp.i:
+	$(MAKE) -f CMakeFiles/test_system.dir/build.make CMakeFiles/test_system.dir/mainwindow.cpp.i
+.PHONY : mainwindow.cpp.i
+
+mainwindow.s: mainwindow.cpp.s
+
+.PHONY : mainwindow.s
+
+# target to generate assembly for a file
+mainwindow.cpp.s:
+	$(MAKE) -f CMakeFiles/test_system.dir/build.make CMakeFiles/test_system.dir/mainwindow.cpp.s
+.PHONY : mainwindow.cpp.s
+
+test_system_autogen/moc_compilation.o: test_system_autogen/moc_compilation.cpp.o
+
+.PHONY : test_system_autogen/moc_compilation.o
+
+# target to build an object file
+test_system_autogen/moc_compilation.cpp.o:
+	$(MAKE) -f CMakeFiles/test_system.dir/build.make CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.o
+.PHONY : test_system_autogen/moc_compilation.cpp.o
+
+test_system_autogen/moc_compilation.i: test_system_autogen/moc_compilation.cpp.i
+
+.PHONY : test_system_autogen/moc_compilation.i
+
+# target to preprocess a source file
+test_system_autogen/moc_compilation.cpp.i:
+	$(MAKE) -f CMakeFiles/test_system.dir/build.make CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.i
+.PHONY : test_system_autogen/moc_compilation.cpp.i
+
+test_system_autogen/moc_compilation.s: test_system_autogen/moc_compilation.cpp.s
+
+.PHONY : test_system_autogen/moc_compilation.s
+
+# target to generate assembly for a file
+test_system_autogen/moc_compilation.cpp.s:
+	$(MAKE) -f CMakeFiles/test_system.dir/build.make CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.s
+.PHONY : test_system_autogen/moc_compilation.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +253,19 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test_system"
+	@echo "... test_system_autogen"
 	@echo "... Topic_lib.o"
 	@echo "... Topic_lib.i"
 	@echo "... Topic_lib.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... mainwindow.o"
+	@echo "... mainwindow.i"
+	@echo "... mainwindow.s"
+	@echo "... test_system_autogen/moc_compilation.o"
+	@echo "... test_system_autogen/moc_compilation.i"
+	@echo "... test_system_autogen/moc_compilation.s"
 .PHONY : help
 
 

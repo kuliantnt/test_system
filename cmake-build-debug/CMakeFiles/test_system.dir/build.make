@@ -105,28 +105,85 @@ CMakeFiles/test_system.dir/Topic_lib.cpp.o.provides: CMakeFiles/test_system.dir/
 CMakeFiles/test_system.dir/Topic_lib.cpp.o.provides.build: CMakeFiles/test_system.dir/Topic_lib.cpp.o
 
 
+CMakeFiles/test_system.dir/mainwindow.cpp.o: CMakeFiles/test_system.dir/flags.make
+CMakeFiles/test_system.dir/mainwindow.cpp.o: ../mainwindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test_system.dir/mainwindow.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_system.dir/mainwindow.cpp.o -c /home/lianlian/Documents/test_system/mainwindow.cpp
+
+CMakeFiles/test_system.dir/mainwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_system.dir/mainwindow.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lianlian/Documents/test_system/mainwindow.cpp > CMakeFiles/test_system.dir/mainwindow.cpp.i
+
+CMakeFiles/test_system.dir/mainwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_system.dir/mainwindow.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lianlian/Documents/test_system/mainwindow.cpp -o CMakeFiles/test_system.dir/mainwindow.cpp.s
+
+CMakeFiles/test_system.dir/mainwindow.cpp.o.requires:
+
+.PHONY : CMakeFiles/test_system.dir/mainwindow.cpp.o.requires
+
+CMakeFiles/test_system.dir/mainwindow.cpp.o.provides: CMakeFiles/test_system.dir/mainwindow.cpp.o.requires
+	$(MAKE) -f CMakeFiles/test_system.dir/build.make CMakeFiles/test_system.dir/mainwindow.cpp.o.provides.build
+.PHONY : CMakeFiles/test_system.dir/mainwindow.cpp.o.provides
+
+CMakeFiles/test_system.dir/mainwindow.cpp.o.provides.build: CMakeFiles/test_system.dir/mainwindow.cpp.o
+
+
+CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.o: CMakeFiles/test_system.dir/flags.make
+CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.o: test_system_autogen/moc_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.o -c /home/lianlian/Documents/test_system/cmake-build-debug/test_system_autogen/moc_compilation.cpp
+
+CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lianlian/Documents/test_system/cmake-build-debug/test_system_autogen/moc_compilation.cpp > CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.i
+
+CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lianlian/Documents/test_system/cmake-build-debug/test_system_autogen/moc_compilation.cpp -o CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.s
+
+CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.o.requires:
+
+.PHONY : CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.o.requires
+
+CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.o.provides: CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.o.requires
+	$(MAKE) -f CMakeFiles/test_system.dir/build.make CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.o.provides.build
+.PHONY : CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.o.provides
+
+CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.o.provides.build: CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.o
+
+
 # Object files for target test_system
 test_system_OBJECTS = \
 "CMakeFiles/test_system.dir/main.cpp.o" \
-"CMakeFiles/test_system.dir/Topic_lib.cpp.o"
+"CMakeFiles/test_system.dir/Topic_lib.cpp.o" \
+"CMakeFiles/test_system.dir/mainwindow.cpp.o" \
+"CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.o"
 
 # External object files for target test_system
 test_system_EXTERNAL_OBJECTS =
 
-test_system: CMakeFiles/test_system.dir/main.cpp.o
-test_system: CMakeFiles/test_system.dir/Topic_lib.cpp.o
-test_system: CMakeFiles/test_system.dir/build.make
-test_system: CMakeFiles/test_system.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable test_system"
+../bin/test_system: CMakeFiles/test_system.dir/main.cpp.o
+../bin/test_system: CMakeFiles/test_system.dir/Topic_lib.cpp.o
+../bin/test_system: CMakeFiles/test_system.dir/mainwindow.cpp.o
+../bin/test_system: CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.o
+../bin/test_system: CMakeFiles/test_system.dir/build.make
+../bin/test_system: /usr/lib/libQt5Widgets.so.5.9.1
+../bin/test_system: /usr/lib/libQt5Gui.so.5.9.1
+../bin/test_system: /usr/lib/libQt5Core.so.5.9.1
+../bin/test_system: CMakeFiles/test_system.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../bin/test_system"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_system.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/test_system.dir/build: test_system
+CMakeFiles/test_system.dir/build: ../bin/test_system
 
 .PHONY : CMakeFiles/test_system.dir/build
 
 CMakeFiles/test_system.dir/requires: CMakeFiles/test_system.dir/main.cpp.o.requires
 CMakeFiles/test_system.dir/requires: CMakeFiles/test_system.dir/Topic_lib.cpp.o.requires
+CMakeFiles/test_system.dir/requires: CMakeFiles/test_system.dir/mainwindow.cpp.o.requires
+CMakeFiles/test_system.dir/requires: CMakeFiles/test_system.dir/test_system_autogen/moc_compilation.cpp.o.requires
 
 .PHONY : CMakeFiles/test_system.dir/requires
 

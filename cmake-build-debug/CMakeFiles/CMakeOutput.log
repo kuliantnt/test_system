@@ -1,4 +1,4 @@
-The system is: Linux - 4.12.4-1-ARCH - x86_64
+The system is: Linux - 4.12.6-1-ARCH - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /usr/bin/cc 
 Build flags: 
@@ -28,28 +28,28 @@ The CXX compiler identification is GNU, found in "/home/lianlian/Documents/test_
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_6e153/fast"
-/usr/bin/make -f CMakeFiles/cmTC_6e153.dir/build.make CMakeFiles/cmTC_6e153.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_abe18/fast"
+/usr/bin/make -f CMakeFiles/cmTC_abe18.dir/build.make CMakeFiles/cmTC_abe18.dir/build
 make[1]: 进入目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
-Building C object CMakeFiles/cmTC_6e153.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_6e153.dir/testCCompiler.c.o   -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_6e153
-/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e153.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_6e153.dir/testCCompiler.c.o  -o cmTC_6e153 
+Building C object CMakeFiles/cmTC_abe18.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_abe18.dir/testCCompiler.c.o   -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_abe18
+/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_abe18.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_abe18.dir/testCCompiler.c.o  -o cmTC_abe18 
 make[1]: 离开目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_37928/fast"
-/usr/bin/make -f CMakeFiles/cmTC_37928.dir/build.make CMakeFiles/cmTC_37928.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_7768d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7768d.dir/build.make CMakeFiles/cmTC_7768d.dir/build
 make[1]: 进入目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
-Building C object CMakeFiles/cmTC_37928.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_37928.dir/CMakeCCompilerABI.c.o   -c /home/lianlian/Downloads/CLion/bin/cmake/share/cmake-3.8/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_37928
-/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37928.dir/link.txt --verbose=1
-/usr/bin/cc     -v CMakeFiles/cmTC_37928.dir/CMakeCCompilerABI.c.o  -o cmTC_37928 
+Building C object CMakeFiles/cmTC_7768d.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_7768d.dir/CMakeCCompilerABI.c.o   -c /home/lianlian/Downloads/CLion/bin/cmake/share/cmake-3.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_7768d
+/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7768d.dir/link.txt --verbose=1
+/usr/bin/cc     -v CMakeFiles/cmTC_7768d.dir/CMakeCCompilerABI.c.o  -o cmTC_7768d 
 使用内建 specs。
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper
@@ -59,9 +59,9 @@ COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper
 gcc 版本 7.1.1 20170630 (GCC) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_37928' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cczbg1eY.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_37928 /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../.. CMakeFiles/cmTC_37928.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_37928' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7768d' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc66sW8W.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_7768d /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../.. CMakeFiles/cmTC_7768d.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7768d' '-mtune=generic' '-march=x86-64'
 make[1]: 离开目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
 
 
@@ -69,14 +69,14 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_37928/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_37928.dir/build.make CMakeFiles/cmTC_37928.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_7768d/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_7768d.dir/build.make CMakeFiles/cmTC_7768d.dir/build]
   ignore line: [make[1]: 进入目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”]
-  ignore line: [Building C object CMakeFiles/cmTC_37928.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_37928.dir/CMakeCCompilerABI.c.o   -c /home/lianlian/Downloads/CLion/bin/cmake/share/cmake-3.8/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_37928]
-  ignore line: [/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37928.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_37928.dir/CMakeCCompilerABI.c.o  -o cmTC_37928 ]
+  ignore line: [Building C object CMakeFiles/cmTC_7768d.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_7768d.dir/CMakeCCompilerABI.c.o   -c /home/lianlian/Downloads/CLion/bin/cmake/share/cmake-3.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_7768d]
+  ignore line: [/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7768d.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_7768d.dir/CMakeCCompilerABI.c.o  -o cmTC_7768d ]
   ignore line: [使用内建 specs。]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper]
@@ -86,13 +86,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc 版本 7.1.1 20170630 (GCC) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_37928' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cczbg1eY.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_37928 /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../.. CMakeFiles/cmTC_37928.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7768d' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc66sW8W.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_7768d /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../.. CMakeFiles/cmTC_7768d.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crtn.o]
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cczbg1eY.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc66sW8W.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -107,7 +107,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_37928] ==> ignore
+    arg [cmTC_7768d] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbeginS.o] ==> ignore
@@ -116,7 +116,7 @@ Parsed C implicit link information from above output:
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../..]
-    arg [CMakeFiles/cmTC_37928.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_7768d.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -147,14 +147,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c6f3d/fast"
-/usr/bin/make -f CMakeFiles/cmTC_c6f3d.dir/build.make CMakeFiles/cmTC_c6f3d.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_1e1c1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1e1c1.dir/build.make CMakeFiles/cmTC_1e1c1.dir/build
 make[1]: 进入目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
-Building C object CMakeFiles/cmTC_c6f3d.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_c6f3d.dir/feature_tests.c.o   -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_c6f3d
-/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c6f3d.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_c6f3d.dir/feature_tests.c.o  -o cmTC_c6f3d 
+Building C object CMakeFiles/cmTC_1e1c1.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_1e1c1.dir/feature_tests.c.o   -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_1e1c1
+/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1e1c1.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_1e1c1.dir/feature_tests.c.o  -o cmTC_1e1c1 
 make[1]: 离开目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
 
 
@@ -167,14 +167,14 @@ make[1]: 离开目录“/home/lianlian/Documents/test_system/cmake-build-debug/C
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_bc2e1/fast"
-/usr/bin/make -f CMakeFiles/cmTC_bc2e1.dir/build.make CMakeFiles/cmTC_bc2e1.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_c50b8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c50b8.dir/build.make CMakeFiles/cmTC_c50b8.dir/build
 make[1]: 进入目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
-Building C object CMakeFiles/cmTC_bc2e1.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_bc2e1.dir/feature_tests.c.o   -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_bc2e1
-/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bc2e1.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_bc2e1.dir/feature_tests.c.o  -o cmTC_bc2e1 
+Building C object CMakeFiles/cmTC_c50b8.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_c50b8.dir/feature_tests.c.o   -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_c50b8
+/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c50b8.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_c50b8.dir/feature_tests.c.o  -o cmTC_c50b8 
 make[1]: 离开目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
 
 
@@ -187,14 +187,14 @@ make[1]: 离开目录“/home/lianlian/Documents/test_system/cmake-build-debug/C
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_6da57/fast"
-/usr/bin/make -f CMakeFiles/cmTC_6da57.dir/build.make CMakeFiles/cmTC_6da57.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_d8279/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d8279.dir/build.make CMakeFiles/cmTC_d8279.dir/build
 make[1]: 进入目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
-Building C object CMakeFiles/cmTC_6da57.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_6da57.dir/feature_tests.c.o   -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_6da57
-/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6da57.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_6da57.dir/feature_tests.c.o  -o cmTC_6da57 
+Building C object CMakeFiles/cmTC_d8279.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_d8279.dir/feature_tests.c.o   -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_d8279
+/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d8279.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_d8279.dir/feature_tests.c.o  -o cmTC_d8279 
 make[1]: 离开目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
 
 
@@ -205,28 +205,28 @@ make[1]: 离开目录“/home/lianlian/Documents/test_system/cmake-build-debug/C
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_73c9a/fast"
-/usr/bin/make -f CMakeFiles/cmTC_73c9a.dir/build.make CMakeFiles/cmTC_73c9a.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_85a81/fast"
+/usr/bin/make -f CMakeFiles/cmTC_85a81.dir/build.make CMakeFiles/cmTC_85a81.dir/build
 make[1]: 进入目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
-Building CXX object CMakeFiles/cmTC_73c9a.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_73c9a.dir/testCXXCompiler.cxx.o -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_73c9a
-/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_73c9a.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_73c9a.dir/testCXXCompiler.cxx.o  -o cmTC_73c9a 
+Building CXX object CMakeFiles/cmTC_85a81.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_85a81.dir/testCXXCompiler.cxx.o -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_85a81
+/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85a81.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_85a81.dir/testCXXCompiler.cxx.o  -o cmTC_85a81 
 make[1]: 离开目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3fc41/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3fc41.dir/build.make CMakeFiles/cmTC_3fc41.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_fe585/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fe585.dir/build.make CMakeFiles/cmTC_fe585.dir/build
 make[1]: 进入目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
-Building CXX object CMakeFiles/cmTC_3fc41.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_3fc41.dir/CMakeCXXCompilerABI.cpp.o -c /home/lianlian/Downloads/CLion/bin/cmake/share/cmake-3.8/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_3fc41
-/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3fc41.dir/link.txt --verbose=1
-/usr/bin/c++      -v CMakeFiles/cmTC_3fc41.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_3fc41 
+Building CXX object CMakeFiles/cmTC_fe585.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_fe585.dir/CMakeCXXCompilerABI.cpp.o -c /home/lianlian/Downloads/CLion/bin/cmake/share/cmake-3.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_fe585
+/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fe585.dir/link.txt --verbose=1
+/usr/bin/c++      -v CMakeFiles/cmTC_fe585.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_fe585 
 使用内建 specs。
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper
@@ -236,9 +236,9 @@ COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper
 gcc 版本 7.1.1 20170630 (GCC) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3fc41' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc20y2RH.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_3fc41 /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../.. CMakeFiles/cmTC_3fc41.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3fc41' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fe585' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9NMu83.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_fe585 /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../.. CMakeFiles/cmTC_fe585.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fe585' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 make[1]: 离开目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
 
 
@@ -246,14 +246,14 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_3fc41/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_3fc41.dir/build.make CMakeFiles/cmTC_3fc41.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_fe585/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_fe585.dir/build.make CMakeFiles/cmTC_fe585.dir/build]
   ignore line: [make[1]: 进入目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”]
-  ignore line: [Building CXX object CMakeFiles/cmTC_3fc41.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_3fc41.dir/CMakeCXXCompilerABI.cpp.o -c /home/lianlian/Downloads/CLion/bin/cmake/share/cmake-3.8/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_3fc41]
-  ignore line: [/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3fc41.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_3fc41.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_3fc41 ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_fe585.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_fe585.dir/CMakeCXXCompilerABI.cpp.o -c /home/lianlian/Downloads/CLion/bin/cmake/share/cmake-3.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_fe585]
+  ignore line: [/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fe585.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_fe585.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_fe585 ]
   ignore line: [使用内建 specs。]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper]
@@ -263,13 +263,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc 版本 7.1.1 20170630 (GCC) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3fc41' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc20y2RH.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_3fc41 /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../.. CMakeFiles/cmTC_3fc41.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fe585' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9NMu83.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_fe585 /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../.. CMakeFiles/cmTC_fe585.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crtn.o]
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cc20y2RH.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc9NMu83.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -284,7 +284,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_3fc41] ==> ignore
+    arg [cmTC_fe585] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbeginS.o] ==> ignore
@@ -293,7 +293,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../..]
-    arg [CMakeFiles/cmTC_3fc41.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_fe585.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -322,14 +322,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_7e1b2/fast"
-/usr/bin/make -f CMakeFiles/cmTC_7e1b2.dir/build.make CMakeFiles/cmTC_7e1b2.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_f266e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f266e.dir/build.make CMakeFiles/cmTC_f266e.dir/build
 make[1]: 进入目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
-Building CXX object CMakeFiles/cmTC_7e1b2.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_7e1b2.dir/feature_tests.cxx.o -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_7e1b2
-/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7e1b2.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_7e1b2.dir/feature_tests.cxx.o  -o cmTC_7e1b2 
+Building CXX object CMakeFiles/cmTC_f266e.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_f266e.dir/feature_tests.cxx.o -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_f266e
+/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f266e.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_f266e.dir/feature_tests.cxx.o  -o cmTC_f266e 
 make[1]: 离开目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
 
 
@@ -395,14 +395,14 @@ make[1]: 离开目录“/home/lianlian/Documents/test_system/cmake-build-debug/C
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_2f119/fast"
-/usr/bin/make -f CMakeFiles/cmTC_2f119.dir/build.make CMakeFiles/cmTC_2f119.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_e1280/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e1280.dir/build.make CMakeFiles/cmTC_e1280.dir/build
 make[1]: 进入目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
-Building CXX object CMakeFiles/cmTC_2f119.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_2f119.dir/feature_tests.cxx.o -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_2f119
-/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2f119.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_2f119.dir/feature_tests.cxx.o  -o cmTC_2f119 
+Building CXX object CMakeFiles/cmTC_e1280.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_e1280.dir/feature_tests.cxx.o -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_e1280
+/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1280.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_e1280.dir/feature_tests.cxx.o  -o cmTC_e1280 
 make[1]: 离开目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
 
 
@@ -468,14 +468,14 @@ make[1]: 离开目录“/home/lianlian/Documents/test_system/cmake-build-debug/C
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_fbf2d/fast"
-/usr/bin/make -f CMakeFiles/cmTC_fbf2d.dir/build.make CMakeFiles/cmTC_fbf2d.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_96485/fast"
+/usr/bin/make -f CMakeFiles/cmTC_96485.dir/build.make CMakeFiles/cmTC_96485.dir/build
 make[1]: 进入目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
-Building CXX object CMakeFiles/cmTC_fbf2d.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_fbf2d.dir/feature_tests.cxx.o -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_fbf2d
-/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fbf2d.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_fbf2d.dir/feature_tests.cxx.o  -o cmTC_fbf2d 
+Building CXX object CMakeFiles/cmTC_96485.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_96485.dir/feature_tests.cxx.o -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_96485
+/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_96485.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_96485.dir/feature_tests.cxx.o  -o cmTC_96485 
 make[1]: 离开目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
 
 
@@ -541,14 +541,14 @@ make[1]: 离开目录“/home/lianlian/Documents/test_system/cmake-build-debug/C
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c9c0b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_c9c0b.dir/build.make CMakeFiles/cmTC_c9c0b.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_cf550/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cf550.dir/build.make CMakeFiles/cmTC_cf550.dir/build
 make[1]: 进入目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
-Building CXX object CMakeFiles/cmTC_c9c0b.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_c9c0b.dir/feature_tests.cxx.o -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_c9c0b
-/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c9c0b.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_c9c0b.dir/feature_tests.cxx.o  -o cmTC_c9c0b 
+Building CXX object CMakeFiles/cmTC_cf550.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_cf550.dir/feature_tests.cxx.o -c /home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_cf550
+/home/lianlian/Downloads/CLion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cf550.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_cf550.dir/feature_tests.cxx.o  -o cmTC_cf550 
 make[1]: 离开目录“/home/lianlian/Documents/test_system/cmake-build-debug/CMakeFiles/CMakeTmp”
 
 

@@ -1,0 +1,2 @@
+set(AM_MOC_OLD_SETTINGS "QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB ~~~ /home/lianlian/Documents/test_system/cmake-build-debug;/home/lianlian/Documents/test_system;/home/lianlian/Documents/test_system/cmake-build-debug/test_system_autogen/include;/usr/include/qt;/usr/include/qt/QtWidgets;/usr/include/qt/QtGui;/usr/include/qt/QtCore;/usr/lib/qt/mkspecs/linux-g++;/usr/include ~~~  ~~~ FALSE ~~~ ")
+set(AM_UIC_OLD_SETTINGS " ~~~  ~~~ ")

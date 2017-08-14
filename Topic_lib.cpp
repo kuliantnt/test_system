@@ -10,13 +10,14 @@ static const char separator_line = ';'; //分隔符 excel行分隔符
 static const char separator_ans= ' '; //分隔符 excel答案分隔符
 size_t Topic::mTopicNumber = 0; //题目的默认编号是0
 
+
 /**
  * 构造函数
  * @param line 一行包括问题，回答，答案
  */
 Topic::Topic(const std::string &line) {
     std::stringstream stringGet(line);
-    std::unique_ptr<std::string> temp = std::make_unique<std::string>();
+    std::string* temp = new std::string();
     getline(stringGet,*temp,separator_line);
     mQuestion = *temp; //得到问题
     getline(stringGet,*temp,separator_line);
@@ -26,6 +27,8 @@ Topic::Topic(const std::string &line) {
     getline(stringGet,*temp);
     mScore = std::stod(*temp); //得到分数
     mNumber = mTopicNumber++;
+    delete temp;
+    *temp = nullptr;
 }
 
 /**
@@ -314,6 +317,10 @@ bool Topics::deleteTopic(const size_t & num) {
     else{
         return false;
     }
+}
+
+Topics::Topics(const std::string &name) :mName(name){
+
 }
 
 

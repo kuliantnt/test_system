@@ -1,10 +1,10 @@
-#include <cstdio>
+#include "mainwindow.h"
+#include <QApplication>
+#include <QtCore/QTextCodec>
 
-/**
- *!国家电网公司考务系统
- * by:lianlian
- */
-
-
-int main() {
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow w;
+    return a.exec();
 }
