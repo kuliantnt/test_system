@@ -1,32 +1,34 @@
+#pragma once
 //
 // Created by lianlian on 17-8-13
-// ä¸»è¦ç”¨äºï¼Œè·å–ç­”æ¡ˆçš„ç±»
+// Ö÷ÒªÓÃÓÚ£¬»ñÈ¡´ğ°¸µÄÀà
 //
 
 #pragma once
 
-#include <fstream>
-#include <iostream>
+
+#include "stdafx.h"
 #include "Topic_lib.h"
 
 
-Topics get_topics(std::string& _source_file,std::string& name){
-    Topics topics(name);
-    std::string line;
-    std::fstream source_fs(_source_file);
-    getline(source_fs,line); //å»æ‰ä¸€è¡Œæ²¡ç”¨çš„é¢˜ç›®
-    while(getline(source_fs,line)){
-        try {
-            topics.addTopic(line);
-        }
-        catch(std::runtime_error& e){
-            //todo åŠ è½½é”™è¯¯è¡Œ
-        }
-        catch(...){
-            std::cerr << "å‡ºç°æœªçŸ¥é”™è¯¯"<< std::endl;
-            std::exit(1);
-        }
-    }
-    return topics;
+inline Topics get_topics(std::string& _source_file, std::string& name) {
+	Topics topics(name);
+	std::string line;
+	std::fstream source_fs(_source_file);
+	getline(source_fs, line); //È¥µôÒ»ĞĞÃ»ÓÃµÄÌâÄ¿
+	while (getline(source_fs, line)) {
+		try {
+			topics.addTopic(line);
+		}
+		catch (std::runtime_error& e) {
+			//todo ¼ÓÔØ´íÎóĞĞ
+		}
+		catch (...) {
+			std::cerr << "³öÏÖÎ´Öª´íÎó" << std::endl;
+			std::exit(1);
+		}
+	}
+	return topics;
 }
+
 

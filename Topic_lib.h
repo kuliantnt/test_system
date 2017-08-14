@@ -2,10 +2,8 @@
 // Created by lianlian on 17-8-10.
 //
 #pragma once
-#include <map>
-#include <set>
-#include <string>
-#include <vector>
+#include "stdafx.h"
+
 
 /**
  * 一个题目的基类
@@ -30,11 +28,11 @@ public:
 
     Topic(const Topic &rhs);
 
-    Topic(Topic &&rhs);
+    Topic(Topic &&rhs) noexcept;
 
     Topic &operator=(const Topic &rhs);
 
-    Topic &operator=(Topic &&rhs);
+    Topic &operator=(Topic &&rhs) noexcept;
 
     virtual std::ostream &print(std::ostream &) const;
 
@@ -63,10 +61,10 @@ private:
 /**
  * 单选题
  */
-class SingleTopic : public Topic{
+class SingleTopic : public Topic {
 public:
-    SingleTopic(const std::string&);
-    ~SingleTopic();
+	SingleTopic(const std::string&);
+	~SingleTopic();
 protected:
 };
 
@@ -83,11 +81,11 @@ protected:
 /**
  * 判断题
  */
-class BoolTopic:public Topic{
+class BoolTopic :public Topic {
 public:
-    BoolTopic(const std::string&);
-    virtual std::ostream &print(std::ostream &) const override;
-    ~BoolTopic();
+	BoolTopic(const std::string&);
+	virtual std::ostream &print(std::ostream &) const override;
+	~BoolTopic();
 protected:
 };
 
@@ -97,44 +95,44 @@ protected:
  */
 class Topics {
 public:
-    Topics() = delete;
+	Topics() = delete;
 
-    Topics(const std::string &name = "");//从试卷编号生成试卷。
+	Topics(const std::string &name = "");//从试卷编号生成试卷。
 
-    Topics(const Topics &);
+	Topics(const Topics &);
 
-    Topics(Topics &&);
+	Topics(Topics &&) noexcept;
 
-    Topics &operator==(const Topics &);
+	Topics &operator==(const Topics &);
 
-    Topics &operator==(Topics &&);
+	Topics &operator==(Topics &&) noexcept;
 
-    std::ostream &print(std::ostream &);
+	std::ostream &print(std::ostream &);
 
-    std::ostream &print_number(std::ostream &os, size_t num);
+	std::ostream &print_number(std::ostream &os, size_t num);
 
-    ~Topics();
+	~Topics();
 
-    //添加题目
-    bool addTopic(const std::string &);
+	//添加题目
+	bool addTopic(const std::string &);
 
-    //删除题目
-    bool deleteTopic(const size_t &);
+	//删除题目
+	bool deleteTopic(const size_t &);
 
-    //修改题目
-    bool modifyTopic(const size_t &, const std::string &);
+	//修改题目
+	bool modifyTopic(const size_t &, const std::string &);
 
-    //获取分数
-    double getScore();
+	//获取分数
+	double getScore();
 
-    //计算分数
-    unsigned calculate_score();
+	//计算分数
+	unsigned calculate_score();
 
 private:
-    std::string mName;//试卷名称
-    std::string mID = 0; //工号
-    std::string mStudent;// 考生姓名
-    std::vector<std::shared_ptr<Topic>> mTopic;
-    std::set<std::string> answer; //考生的答案集合
-    double mScore = 0.0; //分数
-};
+	std::string mName;//试卷名称
+	std::string mID = ""; //工号
+	std::string mStudent;// 考生姓名
+	std::vector<std::shared_ptr<Topic>> mTopic;
+	std::set<std::string> answer; //考生的答案集合
+	double mScore = 0.0; //分数
+}

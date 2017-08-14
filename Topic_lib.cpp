@@ -2,9 +2,7 @@
 // Created by lianlian on 17-8-10.
 //
 // 题目excel顺序为"问题，选项，答案，分数"
-#include <sstream>
-#include <memory>
-#include <iostream>
+#include "stdafx.h"
 #include "Topic_lib.h"
 static const char separator_line = ';'; //分隔符 excel行分隔符
 static const char separator_ans= ' '; //分隔符 excel答案分隔符
@@ -317,6 +315,11 @@ bool Topics::deleteTopic(const size_t & num) {
     else{
         return false;
     }
+}
+
+bool Topics::modifyTopic(const size_t&, const std::string&)
+{
+
 }
 
 Topics::Topics(const std::string &name) :mName(name){
