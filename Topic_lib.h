@@ -1,4 +1,4 @@
-//
+﻿//
 // Created by lianlian on 17-8-10.
 //
 #pragma once
@@ -40,15 +40,20 @@ public:
 
     size_t getNumber() const { return mNumber; }
 
-    std::string getQuestion() const {return mQuestion;}
+	std::string getQuestion() const;
 
-    std::string getAnswer() const {return mAnswer;}
+	std::string getAnswer() const; //标准答案
 
-    static size_t mTopicNumber; //题目编号
+	double getScorce() const
+	{
+		return mScore;
+	}
+
+    static int mTopicNumber; //题目编号
 
 protected:
     //获取问题选项的一个函数
-    std::set<std::string> getOption(std::string &optionLine);
+    std::set<std::string> getOption(std::string &optionLine) const;
 private:
     std::string mQuestion;   //问题
     std::set<std::string> mOption;    //选项
@@ -120,19 +125,22 @@ public:
 	bool deleteTopic(const size_t &);
 
 	//修改题目
-	bool modifyTopic(const size_t &, const std::string &);
+	bool modifyTopic(const size_t &, Topic* topic);
 
 	//获取分数
-	double getScore();
+	double getScore() const;
 
 	//计算分数
-	unsigned calculate_score();
+	double calculate_score();
+
+protected:
+	void copy_this(const Topics& rhs);
 
 private:
 	std::string mName;//试卷名称
 	std::string mID = ""; //工号
 	std::string mStudent;// 考生姓名
 	std::vector<std::shared_ptr<Topic>> mTopic;
-	std::set<std::string> answer; //考生的答案集合
+	std::vector<std::string> mAnswer; //考生的答案集合
 	double mScore = 0.0; //分数
-}
+};

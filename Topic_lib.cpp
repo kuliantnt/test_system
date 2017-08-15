@@ -1,12 +1,14 @@
-//
+﻿//
 // Created by lianlian on 17-8-10.
 //
 // 题目excel顺序为"问题，选项，答案，分数"
 #include "stdafx.h"
 #include "Topic_lib.h"
+
 static const char separator_line = ';'; //分隔符 excel行分隔符
 static const char separator_ans= ' '; //分隔符 excel答案分隔符
-size_t Topic::mTopicNumber = 0; //题目的默认编号是0
+int Topic::mTopicNumber = 0; //题目的默认编号是0
+
 
 
 /**
@@ -16,13 +18,13 @@ size_t Topic::mTopicNumber = 0; //题目的默认编号是0
 Topic::Topic(const std::string &line) {
     std::stringstream stringGet(line);
     std::string* temp = new std::string();
-    getline(stringGet,*temp,separator_line);
+    std::getline(stringGet,*temp,separator_line);
     mQuestion = *temp; //得到问题
-    getline(stringGet,*temp,separator_line);
+    std::getline(stringGet,*temp,separator_line);
     mOption = getOption(*temp); //得到选项
-    getline(stringGet,*temp,separator_line);
+    std::getline(stringGet,*temp,separator_line);
     mAnswer = *temp; //得到答案
-    getline(stringGet,*temp);
+    std::getline(stringGet,*temp);
     mScore = std::stod(*temp); //得到分数
     mNumber = mTopicNumber++;
     delete temp;
@@ -30,11 +32,28 @@ Topic::Topic(const std::string &line) {
 }
 
 /**
+ * \brief 反馈问题
+ * \return 问题
+ */
+std::string Topic::getQuestion() const
+{
+	return mQuestion;
+}
+
+/**
+ * \brief 反馈标准答案
+ * \return 标准答案
+ */
+std::string Topic::getAnswer() const
+{
+	return mAnswer;
+}/**
  * 获得回答选项的list
  * @param optionLine 得到的所有回答，用separator_ans 分割
  * @return 回答的set
  */
-std::set<std::string> Topic::getOption(std::string &optionLine) {
+std::set<std::string> Topic::getOption(std::string &optionLine) const
+{
     std::stringstream ssLine(optionLine);
     std::string temp;
     std::set<std::string> result;
@@ -62,8 +81,8 @@ Topic::Topic(const Topic &rhs) :mQuestion(rhs.mQuestion),mAnswer(rhs.mAnswer)
  * 移动构造函数
  * @param rhs
  */
-Topic::Topic(Topic &&rhs) :mQuestion(std::move(rhs.mQuestion))
-        ,mAnswer(std::move(rhs.mAnswer)),mOption(std::move(rhs.mOption))
+Topic::Topic(Topic &&rhs)noexcept:mQuestion(std::move(rhs.mQuestion))
+        ,mOption(std::move(rhs.mOption)),mAnswer(std::move(rhs.mAnswer))
         ,mNumber(std::move(rhs.mNumber)),mScore(std::move(rhs.mScore)) {
 
 }
@@ -87,7 +106,7 @@ Topic &Topic::operator=(const Topic &rhs) {
  * @param rhs
  * @return
  */
-Topic &Topic::operator=(Topic &&rhs) {
+Topic &Topic::operator=(Topic &&rhs) noexcept{
     mQuestion = std::move(rhs.mQuestion);
     mAnswer = std::move(rhs.mAnswer);
     mNumber = std::move(rhs.mNumber);
@@ -162,9 +181,10 @@ std::set<std::string> SingleTopic::getOption(std::string &optionLine) {
 }
 */
 
+// ReSharper disable once CppDoxygenUnresolvedReference
 /**
  * 单选题获取正确答案的函数
- * @param optionLine
+ * @param option Line
  * @return
  */
 /*std::set<size_t> SingleTopic::getAnswer(std::string &optionLine) {
@@ -188,6 +208,7 @@ MultiTopic::~MultiTopic() {
 }
 
 
+// ReSharper disable once CppDoxygenUnresolvedReference
 /**
  * 判断题获取正确答案的函数
  * @param optionLine 获取到的答案
@@ -213,6 +234,7 @@ BoolTopic::~BoolTopic() {
 
 }
 
+// ReSharper disable once CppDoxygenUnresolvedReference
 /**
  * 多选题获取正确答案的函数
  * @param optionLine 获取到的答案
@@ -285,6 +307,7 @@ std::ostream &Topics::print(std::ostream & os) {
         topic->print(os);
         std::cout << std::endl;
     }
+	return os;
 }
 
 /**
@@ -309,21 +332,101 @@ std::ostream &Topics::print_number(std::ostream &os, size_t num) {
 bool Topics::deleteTopic(const size_t & num) {
     if (num <= mTopic.size() || num >= 1) {
         auto iter = mTopic.begin();
-        iter += num;
+        iter += num - 1;
         mTopic.erase(iter);
     }
     else{
         return false;
     }
+	return true;
 }
 
-bool Topics::modifyTopic(const size_t&, const std::string&)
+/**
+ * \brief 修改题目
+ * \param num 题号
+ * \param topic 题目的指针
+ * \return 成功与否
+ */
+bool Topics::modifyTopic(const size_t&num, Topic* topic)
+{
+	if (num <= mTopic.size() || num >= 1) {
+		auto iter = mTopic.begin();
+		iter += num - 1;
+		**iter = *topic;
+	}
+	else
+	{
+		return false;
+	}
+	return true;
+}
+
+/**
+ * \brief 得到分数
+ * \return 分数
+ */
+double Topics::getScore() const
+{
+	return mScore;
+}
+
+double Topics::calculate_score()
+{
+	double scorce = 0.0;
+	for(int i = 0; i!= mTopic.size(); i++)
+	{
+		if (mTopic[i]->getAnswer() == mAnswer[i])
+			scorce += mTopic[i]->getScorce();
+	}
+	return scorce;
+}
+
+void Topics::copy_this(const Topics& rhs)
+{
+	mName = rhs.mName;
+	mID = rhs.mID;
+	mStudent = rhs.mStudent;
+	mTopic = rhs.mTopic;
+	mAnswer = rhs.mAnswer;
+	mScore = rhs.mScore;
+}
+
+
+
+
+Topics::Topics(const std::string &name) :mName(name)
 {
 
 }
 
-Topics::Topics(const std::string &name) :mName(name){
-
+Topics::Topics(const Topics& rhs) 
+{
+	copy_this(rhs);
 }
 
+Topics::Topics(Topics&&rhs) noexcept
+{
+	mName = std::move(rhs.mName);
+	mID = std::move(rhs.mID);
+	mStudent = std::move(rhs.mStudent);
+	mTopic = std::move(rhs.mTopic);
+	mAnswer = std::move(rhs.mAnswer);
+	mScore = std::move(rhs.mScore);
+}
 
+Topics& Topics::operator==(const Topics&rhs)
+{
+	copy_this(rhs);
+	return *this;
+}
+
+Topics& Topics::operator==(Topics&&rhs) noexcept
+{
+	mName = std::move(rhs.mName);
+	mID = std::move(rhs.mID);
+	mStudent = std::move(rhs.mStudent);
+	mTopic = std::move(rhs.mTopic);
+	mAnswer = std::move(rhs.mAnswer);
+	mScore = std::move(rhs.mScore);
+	return *this;
+}
