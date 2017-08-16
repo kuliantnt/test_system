@@ -32,6 +32,23 @@ Topic::Topic(const std::string &line) {
 }
 
 /**
+ * \brief 另外一种生成题目的方法
+ * \param qustion 问题
+ * \param option 选项
+ * \param answer 回答
+ * \param scorce 分数
+ */
+Topic::Topic(const std::string qustion, std::set<std::string>& option
+	, const std::string& answer, double scorce)
+{
+	mQuestion = qustion;
+	mOption = option;
+	mAnswer = answer;
+	mScore = scorce;
+	mNumber = mTopicNumber++;
+}
+
+/**
  * \brief 反馈问题
  * \return 问题
  */
@@ -199,7 +216,12 @@ std::set<std::string> SingleTopic::getOption(std::string &optionLine) {
  * 直接调用基类的构造函数呢
  * @param line
  */
-SingleTopic::SingleTopic(const std::string& line) : Topic(line){
+SingleTopic::SingleTopic(const std::string& line) : SingleTopic(line){
+}
+
+SingleTopic::SingleTopic(const std::string qustion, std::set<std::string>& option
+	, const std::string& answer, double scorce):Topic(qustion,option,answer,scorce)
+{
 }
 
 
@@ -230,6 +252,11 @@ MultiTopic::MultiTopic(const std::string &line) : Topic(line){
 
 }
 
+MultiTopic::MultiTopic(const std::string qustion, std::set<std::string>& option
+	, const std::string& answer, double scorce):Topic(qustion, option, answer, scorce)
+{
+}
+
 BoolTopic::~BoolTopic() {
 
 }
@@ -258,6 +285,11 @@ BoolTopic::BoolTopic(const std::string &line) : Topic(line){
 
 }
 
+BoolTopic::BoolTopic(const std::string qustion, std::set<std::string>& option
+	, const std::string& answer, double scorce) : Topic(qustion, option, answer, scorce)
+{
+}
+
 std::ostream &BoolTopic::print(std::ostream &os) const {
     os << getQuestion() << std::endl;
     return os;
@@ -271,17 +303,18 @@ std::ostream &BoolTopic::print(std::ostream &os) const {
 bool Topics::addTopic(const std::string &line) {
     std::stringstream ss(line);
     std::string topic_opt; //题目类型
-    std::string topic;
+    std::string topic; //传递到题目中的字段
     ss >> topic_opt;
+	std::getline(ss,topic);
     try {
-        if (topic_opt == "选择题")
-            mTopic.push_back(std::make_shared<SingleTopic>(topic));
-        else if (topic_opt == "多选题")
-            mTopic.push_back(std::make_shared<MultiTopic>(topic));
-        else if (topic_opt == "判断题")
-            mTopic.push_back(std::make_shared<BoolTopic>(topic));
-        else
-            return false;
+		if (topic_opt == "选择题")
+			mTopic.push_back(std::make_shared<SingleTopic>(topic));
+		else if (topic_opt == "多选题")
+			mTopic.push_back(std::make_shared<MultiTopic>(topic));
+		else if (topic_opt == "判断题")
+			mTopic.push_back(std::make_shared<BoolTopic>(topic));
+		else
+			throw std::invalid_argument("题目类型选择错误");
         return true;
     }catch (std::invalid_argument& e){
         std::cerr << e.what() << std::endl;

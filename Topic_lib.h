@@ -24,6 +24,9 @@ public:
 
     Topic(const std::string &line);
 
+	Topic(const std::string qustion, std::set<std::string>& option
+		,const std::string& Answer,double scorce);
+
     virtual ~Topic();
 
     Topic(const Topic &rhs);
@@ -69,6 +72,8 @@ private:
 class SingleTopic : public Topic {
 public:
 	SingleTopic(const std::string&);
+	SingleTopic(const std::string qustion, std::set<std::string>& option
+		,const std::string& Answer,double scorce);
 	~SingleTopic();
 protected:
 };
@@ -79,6 +84,8 @@ protected:
 class MultiTopic:public Topic{
 public:
     MultiTopic(const std::string&);
+	MultiTopic(const std::string qustion, std::set<std::string>& option
+	           ,const std::string& Answer,double scorce);
     ~MultiTopic();
 protected:
 };
@@ -89,6 +96,8 @@ protected:
 class BoolTopic :public Topic {
 public:
 	BoolTopic(const std::string&);
+	BoolTopic(const std::string qustion, std::set<std::string>& option
+	          , const std::string& answer, double scorce);
 	virtual std::ostream &print(std::ostream &) const override;
 	~BoolTopic();
 protected:

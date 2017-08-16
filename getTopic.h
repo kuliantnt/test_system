@@ -17,7 +17,14 @@ inline Topics get_topics(std::string& _source_file, std::string& name) {
 	while (getline(source_fs, line)) {
 		try {
 			line_number++;
-			topics.addTopic(line);
+			if (topics.addTopic(line))
+			{
+				
+			}
+			else
+			{
+				throw std::runtime_error("导入失败");
+			}
 		}
 		catch (std::runtime_error& e) {
 			std::cerr << "第" << line_number << "行出现问题，请检查是否有空格或者其他情况";
