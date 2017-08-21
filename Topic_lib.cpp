@@ -16,19 +16,16 @@ int Topic::mTopicNumber = 0; //题目的默认编号是0
  * @param line 一行包括问题，回答，答案
  */
 Topic::Topic(const std::string &line) {
+	//这个正则怎么写呀呀呀呀！！！！
+	std::regex r(R"([[:alpha:]]+\t)");
+	std::smatch m;
+	std::regex_search(line,m, r);
     std::stringstream stringGet(line);
-    std::string* temp = new std::string();
-    std::getline(stringGet,*temp,separator_line);
-    mQuestion = *temp; //得到问题
-    std::getline(stringGet,*temp,separator_line);
-    mOption = getOption(*temp); //得到选项
-    std::getline(stringGet,*temp,separator_line);
-    mAnswer = *temp; //得到答案
-    std::getline(stringGet,*temp);
-    mScore = std::stod(*temp); //得到分数
+    mQuestion = m[1]; //得到问题
+    mOption = getOption(m[2]); //得到选项
+    mAnswer = m[3]; //得到答案
+	mScore = std::stod(line);//得到分数
     mNumber = mTopicNumber++;
-    delete temp;
-    *temp = nullptr;
 }
 
 /**
@@ -69,7 +66,7 @@ std::string Topic::getAnswer() const
  * @param optionLine 得到的所有回答，用separator_ans 分割
  * @return 回答的set
  */
-std::set<std::string> Topic::getOption(std::string &optionLine) const
+std::set<std::string> Topic::getOption(const std::string &optionLine) const
 {
     std::stringstream ssLine(optionLine);
     std::string temp;
@@ -88,8 +85,8 @@ Topic::~Topic() {
  * 拷贝构造函数
  * @param rhs
  */
-Topic::Topic(const Topic &rhs) :mQuestion(rhs.mQuestion),mAnswer(rhs.mAnswer)
-        ,mOption(rhs.mOption),mNumber(rhs.mNumber),mScore(rhs.mScore)
+Topic::Topic(const Topic &rhs) :mQuestion(rhs.mQuestion),mOption(rhs.mOption)
+        ,mAnswer(rhs.mAnswer),mNumber(rhs.mNumber),mScore(rhs.mScore)
 {
 
 }
@@ -149,7 +146,7 @@ bool operator==(const Topic &lhs, const Topic &rhs) {
  * @return
  */
 bool operator<(const Topic &lhs, const Topic &rhs) {
-    return lhs.mNumber< rhs.mNumber;
+    return lhs.mNumber < rhs.mNumber;
 }
 
 /*std::set<size_t> Topic::getAnswer(std::string &optionLine) {
@@ -164,10 +161,10 @@ bool operator<(const Topic &lhs, const Topic &rhs) {
 std::ostream &Topic::print(std::ostream &os) const{
     os << mQuestion << std::endl;
     char num = 'A';
-    for (auto opt: mOption) {
-        os << num++ << ".";
-        os << &opt << "\t";
-    }
+	for (auto opt : mOption) {
+		os << num++ << "."
+			<< &opt << "\t";
+	}
     return os;
 }
 
@@ -216,18 +213,14 @@ std::set<std::string> SingleTopic::getOption(std::string &optionLine) {
  * 直接调用基类的构造函数呢
  * @param line
  */
-SingleTopic::SingleTopic(const std::string& line) : SingleTopic(line){
-}
+SingleTopic::SingleTopic(const std::string& line) : Topic(line){}
 
 SingleTopic::SingleTopic(const std::string qustion, std::set<std::string>& option
 	, const std::string& answer, double scorce):Topic(qustion,option,answer,scorce)
-{
-}
+{}
 
 
-MultiTopic::~MultiTopic() {
-
-}
+MultiTopic::~MultiTopic() {}
 
 
 // ReSharper disable once CppDoxygenUnresolvedReference
@@ -257,9 +250,7 @@ MultiTopic::MultiTopic(const std::string qustion, std::set<std::string>& option
 {
 }
 
-BoolTopic::~BoolTopic() {
-
-}
+BoolTopic::~BoolTopic() {}
 
 // ReSharper disable once CppDoxygenUnresolvedReference
 /**
@@ -280,15 +271,17 @@ BoolTopic::~BoolTopic() {
 
 }*/
 
-BoolTopic::BoolTopic(const std::string &line) : Topic(line){
-
-
+BoolTopic::BoolTopic(const std::string &line) : Topic(line)
+{
+	
 }
 
 BoolTopic::BoolTopic(const std::string qustion, std::set<std::string>& option
 	, const std::string& answer, double scorce) : Topic(qustion, option, answer, scorce)
 {
+	
 }
+
 
 std::ostream &BoolTopic::print(std::ostream &os) const {
     os << getQuestion() << std::endl;
@@ -325,7 +318,8 @@ bool Topics::addTopic(const std::string &line) {
 /**
  * destruct function
  */
-Topics::~Topics() {
+Topics::~Topics() 
+{
 
 }
 
@@ -349,7 +343,8 @@ std::ostream &Topics::print(std::ostream & os) {
  * @param num 题号
  * @return os
  */
-std::ostream &Topics::print_number(std::ostream &os, size_t num) {
+std::ostream &Topics::print_number(std::ostream &os, size_t num) 
+{
     if (num <= mTopic.size() || num >= 1)
         mTopic[num - 1]->print(os);
     else
@@ -453,7 +448,7 @@ Topics& Topics::operator==(const Topics&rhs)
 	return *this;
 }
 
-Topics& Topics::operator==(Topics&&rhs) noexcept
+Topics& Topics::operator==(Topics&&	rhs) noexcept
 {
 	mName = std::move(rhs.mName);
 	mID = std::move(rhs.mID);
