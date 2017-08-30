@@ -1,0 +1,6 @@
+﻿  test_system.cpp
+  Topic_lib.cpp
+  正在生成代码...
+c:\users\lianlian\documents\github\test_system\topic_lib.cpp(367): warning C4715: “Topics::returnToSql”: 不是所有的控件路径都返回值
+  test_system.vcxproj -> C:\Users\lianlian\Documents\GitHub\test_system\x64\Debug\test_system.exe
+  test_system.vcxproj -> C:\Users\lianlian\Documents\GitHub\test_system\x64\Debug\test_system.pdb (Partial PDB)

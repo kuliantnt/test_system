@@ -5,9 +5,9 @@
 #include "stdafx.h"
 #include "Topic_lib.h"
 
-static const char separator_line = ';'; //分隔符 excel行分隔符
+static const char separator_line = ','; //分隔符 excel行分隔符
 static const char separator_ans= ' '; //分隔符 excel答案分隔符
-int Topic::mTopicNumber = 0; //题目的默认编号是0
+int Topic::mTopicNumber = 1; //题目的默认编号是0
 
 
 
@@ -17,15 +17,21 @@ int Topic::mTopicNumber = 0; //题目的默认编号是0
  */
 Topic::Topic(const std::string &line) {
 	//这个正则怎么写呀呀呀呀！！！！
-	std::regex r(R"([[:alpha:]]+\t)");
-	std::smatch m;
-	std::regex_search(line,m, r);
     std::stringstream stringGet(line);
-    mQuestion = m[1]; //得到问题
-    mOption = getOption(m[2]); //得到选项
-    mAnswer = m[3]; //得到答案
-	mScore = std::stod(line);//得到分数
-    mNumber = mTopicNumber++;
+	std::string temp;
+	getline(stringGet, temp, ',');
+	mScore = std::stod(temp);
+	getline(stringGet, temp, ',');
+	mNumber = std::stoi(temp);
+	getline(stringGet, temp, ',');
+	mTopicType = temp;
+	getline(stringGet, temp, ',');
+	mQuestion = temp;
+	getline(stringGet, temp, ',');
+	mOption = temp;
+	getline(stringGet, temp, ',');
+	mAnswer = temp;
+
 }
 
 /**
@@ -35,7 +41,7 @@ Topic::Topic(const std::string &line) {
  * \param answer 回答
  * \param scorce 分数
  */
-Topic::Topic(const std::string qustion, std::set<std::string>& option
+Topic::Topic(const std::string qustion, const std::string& option
 	, const std::string& answer, double scorce)
 {
 	mQuestion = qustion;
@@ -61,11 +67,13 @@ std::string Topic::getQuestion() const
 std::string Topic::getAnswer() const
 {
 	return mAnswer;
-}/**
+}
+/**
  * 获得回答选项的list
  * @param optionLine 得到的所有回答，用separator_ans 分割
  * @return 回答的set
  */
+
 std::set<std::string> Topic::getOption(const std::string &optionLine) const
 {
     std::stringstream ssLine(optionLine);
@@ -215,7 +223,7 @@ std::set<std::string> SingleTopic::getOption(std::string &optionLine) {
  */
 SingleTopic::SingleTopic(const std::string& line) : Topic(line){}
 
-SingleTopic::SingleTopic(const std::string qustion, std::set<std::string>& option
+SingleTopic::SingleTopic(const std::string qustion, const std::string& option
 	, const std::string& answer, double scorce):Topic(qustion,option,answer,scorce)
 {}
 
@@ -245,7 +253,7 @@ MultiTopic::MultiTopic(const std::string &line) : Topic(line){
 
 }
 
-MultiTopic::MultiTopic(const std::string qustion, std::set<std::string>& option
+MultiTopic::MultiTopic(const std::string qustion, const std::string& option
 	, const std::string& answer, double scorce):Topic(qustion, option, answer, scorce)
 {
 }
@@ -276,13 +284,16 @@ BoolTopic::BoolTopic(const std::string &line) : Topic(line)
 	
 }
 
-BoolTopic::BoolTopic(const std::string qustion, std::set<std::string>& option
+BoolTopic::BoolTopic(const std::string qustion, const std::string& option
 	, const std::string& answer, double scorce) : Topic(qustion, option, answer, scorce)
 {
 	
 }
 
 
+/**
+ * 打印服务
+ */
 std::ostream &BoolTopic::print(std::ostream &os) const {
     os << getQuestion() << std::endl;
     return os;
@@ -294,25 +305,9 @@ std::ostream &BoolTopic::print(std::ostream &os) const {
  * @return 成功或者失败的bool
  */
 bool Topics::addTopic(const std::string &line) {
-    std::stringstream ss(line);
-    std::string topic_opt; //题目类型
-    std::string topic; //传递到题目中的字段
-    ss >> topic_opt;
-	std::getline(ss,topic);
-    try {
-		if (topic_opt == "选择题")
-			mTopic.push_back(std::make_shared<SingleTopic>(topic));
-		else if (topic_opt == "多选题")
-			mTopic.push_back(std::make_shared<MultiTopic>(topic));
-		else if (topic_opt == "判断题")
-			mTopic.push_back(std::make_shared<BoolTopic>(topic));
-		else
-			throw std::invalid_argument("题目类型选择错误");
-        return true;
-    }catch (std::invalid_argument& e){
-        std::cerr << e.what() << std::endl;
-        throw std::runtime_error("参数错误");
-    }
+	
+	mTopic.push_back(std::make_shared<Topic>(line));
+	return true;
 }
 
 /**
@@ -350,6 +345,26 @@ std::ostream &Topics::print_number(std::ostream &os, size_t num)
     else
         throw std::out_of_range("错误的题号");
     return os;
+}
+
+bool Topics::returnToSql()
+{
+	MYSQL m_sqlCon;
+	try
+	{
+		mysql_init(&m_sqlCon);
+		if (!mysql_real_connect(&m_sqlCon, "local", "root", "tcsw930605"
+			, "test_system", 3306, nullptr, 0))
+		{
+			std::cout << "数据库链接失败" << std::endl;
+			return false;
+		}
+	}
+	catch (...)
+	{
+		return false;
+	}
+	return true;
 }
 
 /**

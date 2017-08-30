@@ -26,7 +26,7 @@ inline Topics get_topics(std::string& _source_file, std::string& name) {
 				throw std::runtime_error("导入失败");
 			}
 		}
-		catch (std::runtime_error& e) {
+		catch (const std::runtime_error& e) {
 			std::cerr << "第" << line_number << "行出现问题，请检查是否有空格或者其他情况";
 		}
 		catch (...) {

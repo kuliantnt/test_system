@@ -2,9 +2,11 @@
 //
 
 #include "stdafx.h"
+#include "Topic_lib.h"
 
 
-int main()
+MYSQL m_sqlCon;
+int main(int argc, char ** argv )
 {
     return 0;
 }

@@ -22,3 +22,8 @@
 #include <fstream>
 #include <utility>
 #include <regex>
+
+//mysql
+#include "winsock.h"
+#include "mysql.h"
+#pragma comment(lib, "libmySQL.lib")

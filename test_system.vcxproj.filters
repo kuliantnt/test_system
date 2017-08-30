@@ -51,8 +51,13 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="libxl.dll">
+    <None Include="libmysql.dll">
       <Filter>资源文件</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="libmysql.lib">
+      <Filter>资源文件</Filter>
+    </Library>
   </ItemGroup>
 </Project>

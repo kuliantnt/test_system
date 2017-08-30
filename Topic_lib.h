@@ -6,7 +6,7 @@
 
 
 /**
- * 一个题目的基类
+ * 题目的基类
  */
 class Topic;
 bool operator==(const Topic&lhs, const Topic&rhs);
@@ -19,7 +19,7 @@ public:
 	friend std::ostream &operator<<(std::ostream &os, const Topic &);
 	Topic() = delete; //不允许默认构造函数
 	Topic(const std::string &line);
-	Topic(const std::string qustion, std::set<std::string>& option
+	Topic(const std::string qustion, const std::string& option
 		, const std::string& Answer, double scorce);
 	virtual ~Topic();
 	Topic(const Topic &rhs);
@@ -41,10 +41,11 @@ protected:
 	std::set<std::string> getOption(const std::string &optionLine) const;
 private:
 	std::string mQuestion;   //问题
-	std::set<std::string> mOption;    //选项
+	std::string mOption;    //选项
 	std::string mAnswer;     //答案
-	size_t mNumber; //题目真正的编号。
+	size_t mNumber; //题目真正的编号
 	double mScore;//分数
+	std::string mTopicType; //题目类型
 };
 
 
@@ -54,7 +55,7 @@ private:
 class SingleTopic : public Topic {
 public:
 	SingleTopic(const std::string&);
-	SingleTopic(const std::string qustion, std::set<std::string>& option
+	SingleTopic(const std::string qustion, const std::string& option
 		,const std::string& Answer,double scorce);
 	~SingleTopic();
 protected:
@@ -66,7 +67,7 @@ protected:
 class MultiTopic :public Topic {
 public:
 	MultiTopic(const std::string&);
-	MultiTopic(const std::string qustion, std::set<std::string>& option
+	MultiTopic(const std::string qustion, const std::string& option
 		, const std::string& Answer, double scorce);
 	~MultiTopic();
 protected:
@@ -78,7 +79,7 @@ protected:
 class BoolTopic :public Topic {
 public:
 	BoolTopic(const std::string&);
-	BoolTopic(const std::string qustion, std::set<std::string>& option
+	BoolTopic(const std::string qustion, const std::string& option
 	          , const std::string& answer, double scorce);
 	virtual std::ostream &print(std::ostream &) const override;
 	~BoolTopic();
@@ -99,6 +100,7 @@ public:
 	Topics &operator==(Topics &&) noexcept;
 	std::ostream &print(std::ostream &);
 	std::ostream &print_number(std::ostream &os, size_t num);
+	static bool returnToSql();
 	~Topics();
 	//添加题目
 	bool addTopic(const std::string &);
