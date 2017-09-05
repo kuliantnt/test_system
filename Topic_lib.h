@@ -50,43 +50,6 @@ private:
 
 
 /**
- * 单选题
- */
-class SingleTopic : public Topic {
-public:
-	SingleTopic(const std::string&);
-	SingleTopic(const std::string qustion, const std::string& option
-		,const std::string& Answer,double scorce);
-	~SingleTopic();
-protected:
-};
-
-/**
- * 多选题
- */
-class MultiTopic :public Topic {
-public:
-	MultiTopic(const std::string&);
-	MultiTopic(const std::string qustion, const std::string& option
-		, const std::string& Answer, double scorce);
-	~MultiTopic();
-protected:
-};
-
-/**
- * 判断题
- */
-class BoolTopic :public Topic {
-public:
-	BoolTopic(const std::string&);
-	BoolTopic(const std::string qustion, const std::string& option
-	          , const std::string& answer, double scorce);
-	virtual std::ostream &print(std::ostream &) const override;
-	~BoolTopic();
-protected:
-};
-
-/**
  * 试卷类
  * 嘛。。。好多好多题库放在一起，不是试卷类是什么。。。
  */
@@ -117,7 +80,7 @@ protected:
 private:
 	std::string mName;//试卷名称
 	std::string mID = ""; //工号
-	std::string mStudent;// 考生姓名
+	std::string mStudent = "";// 考生姓名
 	std::vector<std::shared_ptr<Topic>> mTopic;
 	std::vector<std::string> mAnswer; //考生的答案集合
 	double mScore = 0.0; //分数

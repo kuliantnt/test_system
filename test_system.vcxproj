@@ -152,6 +152,7 @@
     <ClInclude Include="Topic_lib.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="getTopic.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

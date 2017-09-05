@@ -1,40 +1,45 @@
 #pragma once
-
-/**
- * 这个类主要用于各种需要文件的获取
- */
+/*!
+ * \file getTopic.h
+ * \date 2017/09/05 10:27
+ *
+ * \author 哭脸tnt
+ * Contact: user@company.com
+ *
+ * \brief 用于获取文件以及sql对象的函数
+ *
+ * TODO: long description
+ *
+ * \note
+*/
 #include "stdafx.h"
 #include "Topic_lib.h"
+using cnt_str_ref = const std::string&;
 
 
-inline Topics get_topics(std::string& _source_file, std::string& name) {
-	size_t line_number = 1;
-	Topics topics(name);
-	std::string line;
-	std::fstream source_fs(_source_file);
-	getline(source_fs, line); //去掉一行没用的题目
-	line_number += 1; //题目是第三行开始呢
-	while (getline(source_fs, line)) {
-		try {
-			line_number++;
-			if (topics.addTopic(line))
-			{
-				
-			}
-			else
-			{
-				throw std::runtime_error("导入失败");
-			}
-		}
-		catch (const std::runtime_error& e) {
-			std::cerr << "第" << line_number << "行出现问题，请检查是否有空格或者其他情况";
-		}
-		catch (...) {
-			std::cerr << "出现未知错误" << std::endl;
-			std::exit(1);
-		}
-	}
-	return topics;
-}
+//************************************
+// Method:    get_topics
+// FullName:  get_topics
+// Access:    public 
+// Returns:   Topics
+// Qualifier:
+// Parameter: cnt_str_ref _source_file
+// Parameter: cnt_str_ref name
+//************************************
+Topics get_topics(cnt_str_ref _source_file, cnt_str_ref name);
 
+//************************************
+// Method:    connect_to_mysql
+// FullName:  connect_to_mysql
+// Access:    public 
+// Returns:   bool
+// Qualifier:
+// Parameter: cnt_str_ref host hostname(ip address)
+// Parameter: cnt_str_ref name username
+// Parameter: cnt_str_ref passwd password
+// Parameter: cnt_str_ref db database
+// Parameter: unsigned int port portnumber
+//************************************
+bool connect_to_mysql(cnt_str_ref host, cnt_str_ref name, cnt_str_ref passwd
+	, cnt_str_ref db, unsigned int port);
 
