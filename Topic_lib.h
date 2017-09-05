@@ -5,8 +5,13 @@
 #include "stdafx.h"
 
 
-/**
- * 题目的基类
+/*!
+ * \class Topic
+ *
+ * \brief 题目的基类，也就是存储题目的地方
+ *
+ * \author 哭脸tnt
+ * \date 九月 2017
  */
 class Topic;
 bool operator==(const Topic&lhs, const Topic&rhs);
@@ -49,46 +54,13 @@ private:
 };
 
 
-/**
- * 单选题
- */
-class SingleTopic : public Topic {
-public:
-	SingleTopic(const std::string&);
-	SingleTopic(const std::string qustion, const std::string& option
-		,const std::string& Answer,double scorce);
-	~SingleTopic();
-protected:
-};
-
-/**
- * 多选题
- */
-class MultiTopic :public Topic {
-public:
-	MultiTopic(const std::string&);
-	MultiTopic(const std::string qustion, const std::string& option
-		, const std::string& Answer, double scorce);
-	~MultiTopic();
-protected:
-};
-
-/**
- * 判断题
- */
-class BoolTopic :public Topic {
-public:
-	BoolTopic(const std::string&);
-	BoolTopic(const std::string qustion, const std::string& option
-	          , const std::string& answer, double scorce);
-	virtual std::ostream &print(std::ostream &) const override;
-	~BoolTopic();
-protected:
-};
-
-/**
- * 试卷类
- * 嘛。。。好多好多题库放在一起，不是试卷类是什么。。。
+/*!
+ * \class Topics
+ *
+ * \brief 试卷类
+ *
+ * \author 哭脸tnt
+ * \date 九月 2017
  */
 class Topics {
 public:

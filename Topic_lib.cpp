@@ -16,7 +16,7 @@ int Topic::mTopicNumber = 1; //题目的默认编号是0
  * @param line 一行包括问题，回答，答案
  */
 Topic::Topic(const std::string &line) {
-	//这个正则怎么写呀呀呀呀！！！！
+	//老娘不弄正则了。。。(；′⌒`)
     std::stringstream stringGet(line);
 	std::string temp;
 	getline(stringGet, temp, ',');
@@ -192,119 +192,13 @@ std::ostream &operator<<(std::ostream &os, const Topic &rhs) {
 }
 
 
-SingleTopic::~SingleTopic() {
-
-}
-
-/*
- * 写多了，压根不需要virtual这个 = =!
-std::set<std::string> SingleTopic::getOption(std::string &optionLine) {
-
-}
-*/
-
-// ReSharper disable once CppDoxygenUnresolvedReference
-/**
- * 单选题获取正确答案的函数
- * @param option Line
- * @return
- */
-/*std::set<size_t> SingleTopic::getAnswer(std::string &optionLine) {
-    std::set<size_t> result;
-    char temp = optionLine[0];
-    if (temp != '\0' && temp >= 65 && temp <= 97) {
-        result.insert(static_cast<unsigned long &&>(temp - 65));
-    }
-}*/
-
-/**
- * 直接调用基类的构造函数呢
- * @param line
- */
-SingleTopic::SingleTopic(const std::string& line) : Topic(line){}
-
-SingleTopic::SingleTopic(const std::string qustion, const std::string& option
-	, const std::string& answer, double scorce):Topic(qustion,option,answer,scorce)
-{}
-
-
-MultiTopic::~MultiTopic() {}
-
-
-// ReSharper disable once CppDoxygenUnresolvedReference
-/**
- * 判断题获取正确答案的函数
- * @param optionLine 获取到的答案
- * @return 答案的set
- */
-/*std::set<size_t> MultiTopic::getAnswer(std::string &optionLine) {
-    std::set<size_t > result;
-    for (char temp: optionLine) {
-        if (temp != '\0' && temp >= 65 && temp <= 97) {
-            result.insert(static_cast<unsigned long &&>(temp - 65));
-        }
-        else
-            throw std::out_of_range("答案必须在26个字母里选择诶！");
-    }
-    return result;
-}*/
-
-MultiTopic::MultiTopic(const std::string &line) : Topic(line){
-
-}
-
-MultiTopic::MultiTopic(const std::string qustion, const std::string& option
-	, const std::string& answer, double scorce):Topic(qustion, option, answer, scorce)
-{
-}
-
-BoolTopic::~BoolTopic() {}
-
-// ReSharper disable once CppDoxygenUnresolvedReference
-/**
- * 多选题获取正确答案的函数
- * @param optionLine 获取到的答案
- * @return 答案的set
- */
-/*std::set<size_t> BoolTopic::getAnswer(std::string &optionLine) {
-    std::set<size_t > result;
-    char temp = optionLine[0];
-    if(temp == 'y' || temp == 'Y')
-        result.insert(1);
-    else if(temp == 'X' || temp == 'x')
-        result.insert(0);
-    else
-        throw std::out_of_range("判断题答案必须为X，Y");
-    return result;
-
-}*/
-
-BoolTopic::BoolTopic(const std::string &line) : Topic(line)
-{
-	
-}
-
-BoolTopic::BoolTopic(const std::string qustion, const std::string& option
-	, const std::string& answer, double scorce) : Topic(qustion, option, answer, scorce)
-{
-	
-}
-
-
-/**
- * 打印服务
- */
-std::ostream &BoolTopic::print(std::ostream &os) const {
-    os << getQuestion() << std::endl;
-    return os;
-}
-
 /**
  * 添加题目
  * @param line 从文件中读取的行
  * @return 成功或者失败的bool
  */
-bool Topics::addTopic(const std::string &line) {
+bool Topics::addTopic(const std::string &line) 
+{
 	
 	mTopic.push_back(std::make_shared<Topic>(line));
 	return true;
@@ -349,22 +243,7 @@ std::ostream &Topics::print_number(std::ostream &os, size_t num)
 
 bool Topics::returnToSql()
 {
-	MYSQL m_sqlCon;
-	try
-	{
-		mysql_init(&m_sqlCon);
-		if (!mysql_real_connect(&m_sqlCon, "local", "root", "tcsw930605"
-			, "test_system", 3306, nullptr, 0))
-		{
-			std::cout << "数据库链接失败" << std::endl;
-			return false;
-		}
-	}
-	catch (...)
-	{
-		return false;
-	}
-	return true;
+	//todo 2017年9月5日
 }
 
 /**
