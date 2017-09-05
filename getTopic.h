@@ -1,47 +1,40 @@
 #pragma once
-/*!
- * \file getTopic.h
- * \date 2017/09/05 10:12
- *
- * \author 哭脸tnt
- * Contact: user@company.com
- *
- * \brief 文件的获取以及sql的链接
- *
- * TODO: long description
- *
- * \note
-*/
 
+/**
+ * 这个类主要用于各种需要文件的获取
+ */
 #include "stdafx.h"
 #include "Topic_lib.h"
 
-using const_str_ref = const std::string&;
 
-//************************************
-// Method:    get_topics
-// FullName:  get_topics
-// Access:    public 
-// Returns:   Topics
-// Qualifier:
-// Parameter: const_str_ref _source_file 文件名
-// Parameter: const_str_ref name 试卷名称
-//************************************
-Topics get_topics(const_str_ref _source_file, const_str_ref name);
+inline Topics get_topics(std::string& _source_file, std::string& name) {
+	size_t line_number = 1;
+	Topics topics(name);
+	std::string line;
+	std::fstream source_fs(_source_file);
+	getline(source_fs, line); //去掉一行没用的题目
+	line_number += 1; //题目是第三行开始呢
+	while (getline(source_fs, line)) {
+		try {
+			line_number++;
+			if (topics.addTopic(line))
+			{
+				
+			}
+			else
+			{
+				throw std::runtime_error("导入失败");
+			}
+		}
+		catch (const std::runtime_error& e) {
+			std::cerr << "第" << line_number << "行出现问题，请检查是否有空格或者其他情况";
+		}
+		catch (...) {
+			std::cerr << "出现未知错误" << std::endl;
+			std::exit(1);
+		}
+	}
+	return topics;
+}
 
 
-
-//************************************
-// Method:    connect_mysql
-// FullName:  connect_mysql
-// Access:    public 
-// Returns:   bool
-// Qualifier:
-// Parameter: const_str_ref server_address
-// Parameter: const_str_ref user_name
-// Parameter: const_str_ref passwd
-// Parameter: const_str_ref db
-// Parameter: int port
-//************************************
-bool connect_mysql(const_str_ref server_address,const_str_ref user_name
-	,const_str_ref passwd,const_str_ref db, unsigned int port);
