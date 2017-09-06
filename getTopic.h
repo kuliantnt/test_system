@@ -43,3 +43,14 @@ Topics get_topics(cnt_str_ref _source_file, cnt_str_ref name);
 bool connect_to_mysql(cnt_str_ref host, cnt_str_ref name, cnt_str_ref passwd
 	, cnt_str_ref db, unsigned int port);
 
+
+//************************************
+// Method:    create_table
+// FullName:  create_table
+// Access:    public 
+// Returns:   bool
+// Qualifier:
+// Parameter: cnt_str_ref ID
+// Parameter: cnt_str_ref NAME
+//************************************
+bool create_table(cnt_str_ref ID, cnt_str_ref NAME);
