@@ -70,13 +70,40 @@ bool create_table(cnt_str_ref ID, cnt_str_ref NAME)
 	if (!row)
 	{
 		std::cout << "该表不存在,正在创建索引数据库" << std::endl;
-		mysql_query(&m_sql_con, 
+		if (mysql_query(&m_sql_con,
 			"CREATE TABLE `test_system`.`test_index` (\
-			`ID` INT NOT NULL,\
+			`ID` VARCHAR(50) NOT NULL,\
 			`NAME` VARCHAR(99) NOT NULL,\
 			PRIMARY KEY(`ID`));"
-		);
+		) != 0)
+		{
+			std::cout << "索引创建失败" << std::endl;
+			return false;
+		}
 	}
+	mysql_free_result(result);//清理result;
+	std::string query = "INSERT INTO TEST_INDEX VALUES ('" + ID
+		+ "','" + NAME + "')";
+	if (mysql_real_query(&m_sql_con, query.c_str(),(unsigned long)query.size()) != 0)
+	{
+		std::cout << "插入索引失败，请检查是否ID重复" << std::endl;
+		return false;
+	}
+	query = "CREATE TABLE `test_system`.`" + ID + "` (\
+		`QUESTION` VARCHAR(99) NOT NULL,\
+		`OPTION` VARCHAR(99) NULL,\
+		`ANSWER` VARCHAR(20) NOT NULL,\
+		`NUMBER` INT UNSIGNED NOT NULL,\
+		`TOPICTYPE` VARCHAR(20) NOT NULL,\
+		PRIMARY KEY(`NUMBER`));	";
+	if (mysql_query(&m_sql_con, query.c_str()) != 0)
+	{
+		std::cout << "创建表格失败" << std::endl;
+		query = "DELETE FROM TEST_INDEX WHERE ID = " + ID;
+		mysql_query(&m_sql_con, query.c_str());
+		return false;
+	}
+	std::cout << "创建表格成功" << std::endl;
 	return true;
 }
 

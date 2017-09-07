@@ -44,13 +44,8 @@ int main(int argc, char ** argv)
 		system("pause");
 		return 1;
 	}
-	if (!create_table("test1", TODO)) {
-
-		system("pause");
-		return 1;
-	}
+	create_table("a10", "test1");
 	system("pause");
-	return 0;
 }
 
 
