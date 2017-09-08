@@ -9,33 +9,35 @@
  * 题目的基类
  */
 class Topic;
-bool operator==(const Topic&lhs, const Topic&rhs);
+bool operator== (const Topic&lhs, const Topic&rhs);
 bool operator< (const Topic&lhs,const Topic&rhs);
 std::ostream& operator<< (std::ostream& os,const Topic&);
 class Topic {
 public:
+	//友元
 	friend bool operator==(const Topic &lhs, const Topic &rhs);
 	friend bool operator<(const Topic &lhs, const Topic &rhs);
 	friend std::ostream &operator<<(std::ostream &os, const Topic &);
+	//默认构造函数
 	Topic() = delete; //不允许默认构造函数
 	Topic(const std::string &line);
-	Topic(const std::string qustion, const std::string& option
-		, const std::string& Answer, double scorce);
+	Topic(const std::string number, const std::string qustion
+		, const std::string & option, const std::string & answer, const std::string& scorce);
+	//析构函数
 	virtual ~Topic();
+	//赋值构造函数
 	Topic(const Topic &rhs);
 	Topic(Topic &&rhs) noexcept;
 	Topic &operator=(const Topic &rhs);
 	Topic &operator=(Topic &&rhs) noexcept;
 	virtual std::ostream &print(std::ostream &) const;
-	//    std::ostream &print_Ans(std::ostream &) const;
-	size_t getNumber() const { return mNumber; }
+	//get & set;
+	std::string to_string();
+	std::string getNumber() const { return mNumber; }
 	std::string getQuestion() const;
 	std::string getAnswer() const; //标准答案
-	double getScorce() const
-	{
-		return mScore;
-	}
-	static int mTopicNumber; //题目编号
+	std::string getScorce() const { return mScore; }
+	std::string getTopicType() { return mTopicType; }
 protected:
 	//获取问题选项的一个函数
 	std::set<std::string> getOption(const std::string &optionLine) const;
@@ -43,8 +45,8 @@ private:
 	std::string mQuestion;   //问题
 	std::string mOption;    //选项
 	std::string mAnswer;     //答案
-	size_t mNumber; //题目真正的编号
-	double mScore;//分数
+	std::string mNumber; //题目真正的编号
+	std::string mScore;//分数
 	std::string mTopicType; //题目类型
 };
 

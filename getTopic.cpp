@@ -31,7 +31,7 @@ Topics get_topics(cnt_str_ref _source_file, cnt_str_ref name)
 				throw std::runtime_error("导入失败");
 			}
 		}
-		catch (const std::runtime_error& e) {
+		catch (const std::runtime_error& ) {
 			std::cerr << "第" << line_number << "行出现问题，请检查是否有空格或者其他情况";
 		}
 		catch (...) {
@@ -95,6 +95,7 @@ bool create_table(cnt_str_ref ID, cnt_str_ref NAME)
 		`ANSWER` VARCHAR(20) NOT NULL,\
 		`NUMBER` INT UNSIGNED NOT NULL,\
 		`TOPICTYPE` VARCHAR(20) NOT NULL,\
+		`SCORE` REAL NOT NULL,\
 		PRIMARY KEY(`NUMBER`));	";
 	if (mysql_query(&m_sql_con, query.c_str()) != 0)
 	{

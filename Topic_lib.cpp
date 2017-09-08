@@ -7,7 +7,6 @@
 
 static const char separator_line = ','; //分隔符 excel行分隔符
 static const char separator_ans= ' '; //分隔符 excel答案分隔符
-int Topic::mTopicNumber = 1; //题目的默认编号是0
 
 
 
@@ -15,14 +14,15 @@ int Topic::mTopicNumber = 1; //题目的默认编号是0
  * 构造函数
  * @param line 一行包括问题，回答，答案
  */
-Topic::Topic(const std::string &line) {
+Topic::Topic(const std::string &line) 
+{
 	//这个正则怎么写呀呀呀呀！！！！
     std::stringstream stringGet(line);
 	std::string temp;
 	getline(stringGet, temp, ',');
-	mScore = std::stod(temp);
+	mScore = temp;
 	getline(stringGet, temp, ',');
-	mNumber = std::stoi(temp);
+	mNumber = temp;
 	getline(stringGet, temp, ',');
 	mTopicType = temp;
 	getline(stringGet, temp, ',');
@@ -31,7 +31,6 @@ Topic::Topic(const std::string &line) {
 	mOption = temp;
 	getline(stringGet, temp, ',');
 	mAnswer = temp;
-
 }
 
 /**
@@ -41,14 +40,14 @@ Topic::Topic(const std::string &line) {
  * \param answer 回答
  * \param scorce 分数
  */
-Topic::Topic(const std::string qustion, const std::string& option
-	, const std::string& answer, double scorce)
+Topic::Topic(const std::string number,const std::string qustion, const std::string& option
+	, const std::string& answer, const std::string& scorce)
 {
 	mQuestion = qustion;
 	mOption = option;
 	mAnswer = answer;
 	mScore = scorce;
-	mNumber = mTopicNumber++;
+	mNumber = number;
 }
 
 /**
@@ -174,6 +173,20 @@ std::ostream &Topic::print(std::ostream &os) const{
 			<< &opt << "\t";
 	}
     return os;
+}
+
+std::string Topic::to_string()
+{
+	std::regex number_regex("\\d+");
+	std::regex score_regex("\\d+\\.?\\d*");
+	if (!regex_match(mNumber, number_regex))
+		throw std::runtime_error("题号输入有误");
+	if (!regex_match(mScore, score_regex))
+		throw std::runtime_error("分数输入有误");
+	std::string result;
+	result = mQuestion + ',' + mOption + ',' + mAnswer + ',' + mNumber
+		+ mTopicType + ',' + mScore;
+	return result;
 }
 
 /**
@@ -309,10 +322,10 @@ double Topics::getScore() const
 double Topics::calculate_score()
 {
 	double scorce = 0.0;
-	for(int i = 0; i!= mTopic.size(); i++)
+	for (int i = 0; i != mTopic.size(); i++)
 	{
 		if (mTopic[i]->getAnswer() == mAnswer[i])
-			scorce += mTopic[i]->getScorce();
+			scorce += std::stod(mTopic[i]->getScorce());
 	}
 	return scorce;
 }
