@@ -108,11 +108,34 @@ bool create_table(MYSQL &m_sql_con, cnt_str_ref ID, cnt_str_ref NAME)
 	return true;
 }
 
-bool insert_topic_to_sql(MYSQL &m_sql_con, const Topics& topics)
+bool insert_topic_to_sql(MYSQL &m_sql_con, Topics& topics)
 {
-	std::string query = NULL;
-	query += "insert into ";
-	query += topics.getID();
+	size_t number = 1;
+	for (size_t i = 0; i != topics.size(); i++)
+	{
+		std::string query = NULL;
+		try
+		{
+			query += "insert into ";
+			query += topics.getID();
+			query += " ( `QUESTION`,`OPTION` ,`ANSWER`,	`NUMBER` \
+		,`TOPICTYPE` ,`SCORE`) values (";
+			query += topics[i].to_string();
+			query += ")";
+			mysql_query(&m_sql_con, query.c_str());
+		}
+		catch (const std::runtime_error& e ) 
+		{
+			std::cout << e.what()<<"在第"<< number<<"道题" << std::endl;
+		}
+		catch (const std::exception&e)
+		{
+			std::cout << e.what() <<std::endl;
+			return false;
+		}
+		number + 1;	
+	}
+	return true;
 }
 
 
