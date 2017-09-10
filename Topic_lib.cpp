@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "Topic_lib.h"
 
+
 static const char separator_line = ','; //分隔符 excel行分隔符
 static const char separator_ans= ' '; //分隔符 excel答案分隔符
 
@@ -224,6 +225,24 @@ Topics::~Topics()
 
 }
 
+//************************************
+// Method:    operator[]
+// FullName:  Topics::operator[]
+// Access:    public 
+// Returns:   Topic & 返回对应的题目
+// Qualifier:
+// Parameter: size_t size 题目位置
+//************************************
+Topic & Topics::operator[](size_t size)
+{
+	return *mTopic[size];
+}
+
+size_t Topics::size()
+{
+	return mTopic.size();
+}
+
 /**
  * 打印整张试卷，可是感觉就是测试用
  * @param os ostream
@@ -238,40 +257,9 @@ std::ostream &Topics::print(std::ostream & os) {
 	return os;
 }
 
-/**
- * 打印题目（题号）
- * @param os
- * @param num 题号
- * @return os
- */
-std::ostream &Topics::print_number(std::ostream &os, size_t num) 
-{
-    if (num <= mTopic.size() || num >= 1)
-        mTopic[num - 1]->print(os);
-    else
-        throw std::out_of_range("错误的题号");
-    return os;
-}
 
-bool Topics::returnToSql()
-{
-	MYSQL m_sqlCon;
-	try
-	{
-		mysql_init(&m_sqlCon);
-		if (!mysql_real_connect(&m_sqlCon, "local", "root", "tcsw930605"
-			, "test_system", 3306, nullptr, 0))
-		{
-			std::cout << "数据库链接失败" << std::endl;
-			return false;
-		}
-	}
-	catch (...)
-	{
-		return false;
-	}
-	return true;
-}
+
+
 
 /**
  * 删除题目
@@ -296,12 +284,12 @@ bool Topics::deleteTopic(const size_t & num) {
  * \param topic 题目的指针
  * \return 成功与否
  */
-bool Topics::modifyTopic(const size_t&num, Topic* topic)
+bool Topics::modifyTopic(const size_t &size, std::shared_ptr<Topic> topic /*= std::make_shared<Topic>("")*/)
 {
-	if (num <= mTopic.size() || num >= 1) {
+	if (size <= mTopic.size() || size >= 1) {
 		auto iter = mTopic.begin();
-		iter += num - 1;
-		**iter = *topic;
+		iter += size - 1;
+		*iter = topic;
 	}
 	else
 	{

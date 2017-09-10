@@ -39,12 +39,14 @@ int main(int argc, char ** argv)
 	//system("pause");
 	//return 0;
 
-	if (!connect_to_mysql("localhost", "root", "tcsw930605", "test_system", 3306))
+	MYSQL m_sql_con;
+	if (!connect_to_mysql(m_sql_con,"localhost", "root", "tcsw930605", "test_system", 3306))
 	{
 		system("pause");
 		return 1;
 	}
-	create_table("a10", "test1");
+	create_table(m_sql_con,"a10", "test1");
+	mysql_close(&m_sql_con);
 	system("pause");
 }
 

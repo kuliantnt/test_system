@@ -42,8 +42,8 @@ Topics get_topics(cnt_str_ref _source_file, cnt_str_ref name)
 	return topics;
 }
 
-MYSQL m_sql_con; //导入到试卷的数据库
-bool connect_to_mysql(cnt_str_ref host, cnt_str_ref name, cnt_str_ref passwd, cnt_str_ref db, unsigned int port)
+ //导入到试卷的数据库
+bool connect_to_mysql(MYSQL &m_sql_con, cnt_str_ref host, cnt_str_ref name, cnt_str_ref passwd, cnt_str_ref db, unsigned int port)
 {
 	try
 	{
@@ -63,7 +63,7 @@ bool connect_to_mysql(cnt_str_ref host, cnt_str_ref name, cnt_str_ref passwd, cn
 	}
 }
 
-bool create_table(cnt_str_ref ID, cnt_str_ref NAME)
+bool create_table(MYSQL &m_sql_con, cnt_str_ref ID, cnt_str_ref NAME)
 {
 	MYSQL_RES* result = mysql_list_tables(&m_sql_con, "TEST_INDEX");
 	MYSQL_ROW row = mysql_fetch_row(result);
@@ -107,4 +107,12 @@ bool create_table(cnt_str_ref ID, cnt_str_ref NAME)
 	std::cout << "创建表格成功" << std::endl;
 	return true;
 }
+
+bool insert_topic_to_sql(MYSQL &m_sql_con, const Topics& topics)
+{
+	std::string query = NULL;
+	query += "insert into ";
+	query += topics.getID();
+}
+
 

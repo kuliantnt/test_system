@@ -1,6 +1,11 @@
-﻿//
-// Created by lianlian on 17-8-10.
-//
+﻿/*!
+ * \file Topic_lib.h
+ *
+ * \author 哭脸tnt
+ * \date 九月 2017
+ *
+ * getTopic 库的头文件
+ */
 #pragma once
 #include "stdafx.h"
 
@@ -63,16 +68,18 @@ public:
 	Topics(Topics &&) noexcept;
 	Topics &operator==(const Topics &);
 	Topics &operator==(Topics &&) noexcept;
-	std::ostream &print(std::ostream &);
-	std::ostream &print_number(std::ostream &os, size_t num);
-	static bool returnToSql();
+	Topic &operator[](size_t size);
+	size_t size();
+	const std::string& getName() const { return mName; }
+	const std::string& getID() const { return mID; }
+	std::ostream &print(std::ostream & os);
 	~Topics();
 	//添加题目
 	bool addTopic(const std::string &);
 	//删除题目
 	bool deleteTopic(const size_t &);
 	//修改题目
-	bool modifyTopic(const size_t &, Topic* topic);
+	bool modifyTopic(const size_t &, std::shared_ptr<Topic> topic = std::make_shared<Topic>(""));
 	//获取分数
 	double getScore() const;
 	//计算分数
